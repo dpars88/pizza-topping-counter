@@ -8,7 +8,7 @@ import React from 'react'
                     {index +1}.
                 </div>
                 <div className="list-item-topping">
-                    Topping: {item.topping} 
+                    Topping: {item.topping}
                 </div>
                 <div className="list-item-total">
                     Total Orders: {item.total}
