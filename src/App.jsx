@@ -6,6 +6,7 @@ import axios from 'axios'
 
 function App() {
   const [toppings, setToppings] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchToppingCombos = async () => {
@@ -38,6 +39,7 @@ function App() {
         return final;
       });
       setToppings(final);
+      setLoading(false);
     };
 
     fetchToppingCombos()
@@ -48,7 +50,7 @@ function App() {
     <div className="App">
         <Header />
         <div className="toppings-list">
-          <ToppingsList toppings={toppings}/>
+          <ToppingsList toppings={toppings} loading={loading}/>
         </div>
     </div>
   )
